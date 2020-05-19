@@ -43,7 +43,7 @@
 					<div class="col-xl-3 col-lg-4 col-md-5 col-sm-12">
 						<div class="wrap">
 							<div class="wrap-block">
-								<button class="button header-btn">
+								<button class="button header-btn popup-btn">
 									Получить консультацию
 								</button>
 							</div>
@@ -52,8 +52,6 @@
 
 				</div>
 			</div>
-
-			<!-- main -->
 			<div class="main-content">
 				<div class="row">
 
@@ -87,11 +85,8 @@
 							</form>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
-
 		</div>
 	</main>
 
@@ -157,10 +152,33 @@
 		</div>
 	</section>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous">
-		</script>
+		<!-- Модальное Окно -->
+		<!-- Получить Консультацию -->
+	<div class="popup">
+		<div class="popup-dialog">
+			<div class="popup-content">
+				<button class="popup-close">&times;</button>
+				<h4 class = "popup-header">Заинтересовало?</h4>
+				<p>Оставьте свои контактные данные <br> для справки.</p>
+				<div class="main-form popup-form">
+					<form action="#">
+						<label for="#">Ваше имя</label>
+						<input class="main-form-input" type="text">
+						<label for="#">Номер телефона</label>
+						<input class="main-form-input" type="text">
+						<label for="#">Сообщение</label>
+						<textarea class = "main-form-input" rows="5"></textarea>
+						<button class="button main-form-btn"
+							type="submit">Оставьте заявку</button>
+						<small>Подарок в день обращения</small>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<!-- Стили для слайдера -->
 	<link rel="stylesheet" href="slick/slick.css">
 	<link rel="stylesheet" href="slick/slick-theme.css">
@@ -169,6 +187,14 @@
 	<!-- Инициализация -->
 	<script>
 		$(document).ready(function () {
+			$('.popup-btn').on('click', function(event){
+				event.preventDefault();
+				$('.popup').fadeIn();
+			});
+			$('.popup-close').on('click', function(event){
+				event.preventDefault();
+				$('.popup').fadeOut();
+			});
 			$('.feature-slider').slick({
 				infinite: true,
 				slidesToShow: 4,
@@ -197,9 +223,6 @@
 							nextArrow: '<button class = "arrow next"></button>',
 						}
 					}
-					// You can unslick at a given breakpoint now by adding:
-					// settings: "unslick"
-					// instead of a settings object
 				]
 			});
 		});
