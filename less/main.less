@@ -84,10 +84,22 @@ section {
 }
 
 .section-header {
+   &_light {
+      color: @light;
+      margin-top: 0;
+   }
+
+   h2 {
+      font-size: 3.6rem;
+      .bold();
+   }
+
+   p {
+      font-size: 1.4rem;
+   }
+
    text-align: center;
    margin: 2rem 0 10rem;
-   font-size: 3.6rem;
-   .bold();
 }
 
 // Main
@@ -109,10 +121,12 @@ section {
          text-transform: uppercase;
       }
    }
+
    &-sub {
       margin-bottom: 4rem;
       font-size: 2.4rem;
    }
+
    span {
       display: inline-block;
       padding: 3rem 5rem;
@@ -120,11 +134,13 @@ section {
       color: @light;
       background-color: @icons-color;
       text-align-last: center;
+
       strong {
          font-size: 3rem;
          .bold();
       }
    }
+
    &-trigger {
       display: block;
       margin-top: 3rem;
@@ -140,13 +156,16 @@ section {
       padding: 4.5rem 5rem;
       background-color: @light;
       text-align: center;
+
       &-header {
          margin-bottom: 4rem;
          font-size: 1.8rem;
+
          strong {
             font-size: 1.9rem;
          }
       }
+
       &-input {
          display: block;
          margin: 2rem 0;
@@ -155,6 +174,7 @@ section {
          padding: 1.6rem;
          border-radius: 5px;
       }
+
       label {
          position: absolute;
          left: 50%;
@@ -163,12 +183,14 @@ section {
          background-color: @light;
          font-size: 1.3rem;
       }
+
       &-btn {
          display: block;
          height: 5.5rem;
          width: 100%;
          font-size: 1.6rem;
       }
+
       small {
          display: block;
          margin-top: 1.5rem;
@@ -176,9 +198,11 @@ section {
       }
    }
 }
+
 .header {
    height: 7rem;
 }
+
 .wrap {
    display: table;
    width: 100%;
@@ -190,9 +214,11 @@ section {
       text-align: right;
    }
 }
+
 .phone-wrap {
    text-align: right;
 }
+
 .phone-link {
    display: inline-block;
    .bold();
@@ -207,20 +233,24 @@ section {
 .features {
    &-block {
       text-align: center;
+
       h3 {
          font-size: 2rem;
          .bold();
          margin-bottom: 3rem;
       }
+
       p {
          display: inline-block;
          font-size: 1.6rem;
          width: 80%;
       }
    }
+
    &-img {
       height: 8rem;
       margin-bottom: 3rem;
+
       img {
          display: block;
          margin: 0 auto;
@@ -257,7 +287,7 @@ section {
 // Модальные окна
 
 .popup {
-   display:none;
+   display: none;
    position: fixed;
    left: 0;
    right: 0;
@@ -294,10 +324,74 @@ section {
       padding: 4rem 6rem;
       text-align: center;
    }
+
    &-header {
       .bold();
    }
 }
+
+// Секция с ценами
+.price {
+   background: @icons-color url(../img/prices/bgc.jpg) center;
+
+   &-header-btn {
+      margin-top: 2.5rem;
+   }
+
+   &-button {
+      text-align: right;
+   }
+
+   // Карточки с тарифами
+   &-block {
+      padding: 1.5rem 3rem 4rem;
+      min-height: 50rem;
+      background-color: @light;
+      box-shadow: 0 14px 21px rgba(0, 0, 0, 0.17);
+      text-align: center;
+
+      h4 {
+         min-height: 3rem;
+         margin: 3rem 0;
+         font-size: 1.9rem;
+         .bold();
+      }
+   }
+
+   &-list {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      min-height: 14rem;
+      list-style: none;
+      padding: 0;
+
+      li {
+         &:before {
+            content: '';
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background: url(../img/prices/checked.png) center no-repeat;
+            vertical-align: top;
+         }
+      }
+   }
+
+   img {
+      width: 100%;
+      max-width: 30rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+   }
+
+   &-tag {
+      display: block;
+      margin-bottom: 2rem;
+      font-size: 1.9rem;
+      .bold();
+   }
+}
+
 
 @media (max-width: 991px) {
    .main {
@@ -314,6 +408,26 @@ section {
 
    .main-title {
       text-align: center;
+   }
+
+   .price {
+      &-button {
+         text-align: center;
+         padding: 2rem 0;
+      }
+
+      &-header-btn {
+         margin-top: 0;
+         margin-bottom: 2rem;
+      }
+
+      &-block {
+         margin-top: 2rem;
+      }
+   }
+
+   .section-header_light {
+      margin-bottom: 0;
    }
 }
 
