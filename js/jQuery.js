@@ -1,8 +1,8 @@
 $(document).ready(function () {
   // Слайдер с отзывами 
   $('.feedback-slider').slick({
-    prevArrow: '<button class = "feedback-slider-btn feedback-prev-btn"><img src = "../img/feedback/prev_arrow.png"></button>',
-          nextArrow: '<button class = "feedback-slider-btn feedback-next-btn"><img src = "../img/feedback/next_arrow.png"</button>'
+    prevArrow: '<button class = "feedback-slider-btn feedback-prev-btn"><img src = "../img/feedback/prevArrow.png"></button>',
+          nextArrow: '<button class = "feedback-slider-btn feedback-next-btn"><img src = "../img/feedback/nextArrow.png"</button>'
   });
   // Слайдер c преимуществами
   $('.feature-slider').slick({
